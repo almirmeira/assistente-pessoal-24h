@@ -1,0 +1,47 @@
+# Arquivos de ambiente e segredos
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+credentials.json
+secrets.json
+
+# Chaves de API
+api_keys.txt
+tokens.json
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporários
+tmp/
+temp/
+*.tmp
+
+# Dados sensíveis de investimentos
+portfolio.json
+trades.json
+balance.json
