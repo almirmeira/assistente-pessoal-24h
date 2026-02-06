@@ -64,24 +64,29 @@ docker compose down
 openclaw setup
 ```
 
-### 3. Configurar API Key Anthropic
+### 3. Acessar Interface Web
 
-Edite o arquivo `.env`:
-
+**Via túnel SSH (recomendado):**
 ```bash
-nano /home/almir/openclaw/.env
+# No notebook local, execute:
+ssh -N -L 18789:localhost:18789 root@192.168.1.26
+
+# Depois acesse no navegador:
+# http://localhost:18789/?token=SEU_TOKEN
 ```
 
-Adicione sua chave da Anthropic:
-
-```env
-ANTHROPIC_API_KEY=sk-ant-api03-...
+**Via HTTPS direto:**
+```
+https://192.168.1.26/?token=SEU_TOKEN
 ```
 
-### 4. Iniciar Gateway
+### 4. Token de Acesso
 
+O token atual está em `/root/.openclaw/openclaw.json` no servidor.
+
+Para obter o token:
 ```bash
-docker compose up -d
+ssh root@192.168.1.26 "grep -A2 '\"auth\"' /root/.openclaw/openclaw.json"
 ```
 
 ## Integrações Planejadas
