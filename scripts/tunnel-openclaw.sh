@@ -13,7 +13,8 @@ echo "=========================================="
 echo ""
 echo "Criando túnel: localhost:$LOCAL_PORT -> $SERVER_IP:$REMOTE_PORT"
 echo ""
-TOKEN="6d2ad2490dbfe0f221c6a425fbdd1c69e94f7f77892faa06"
+TOKEN="961044840b69cab1da9ea9bf8e4e301b8ac9f1b63bd816b8"
+# Atualizado em: 2026-02-06 18:08 - FUNCIONANDO
 
 echo "Após conectar, acesse no navegador:"
 echo "  http://localhost:$LOCAL_PORT/?token=$TOKEN"

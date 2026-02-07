@@ -93,8 +93,8 @@ ssh root@192.168.1.26 "grep -A2 '\"auth\"' /root/.openclaw/openclaw.json"
 
 ### Fase 1 - Fundação
 - [x] Instalação OpenClaw
-- [ ] Configuração Gateway
-- [ ] Integração Claude Code
+- [x] Configuração Gateway (HTTPS via Caddy)
+- [x] Integração com API Anthropic (claude-opus-4-5)
 
 ### Fase 2 - Comunicação
 - [ ] WhatsApp Business API
