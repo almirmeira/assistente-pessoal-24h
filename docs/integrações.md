@@ -6,9 +6,9 @@ Este documento detalha as integrações planejadas para o Assistente Pessoal 24h
 
 | Integração | Prioridade | Status | Complexidade |
 |------------|------------|--------|--------------|
-| Claude Code | Alta | Pendente | Baixa |
+| Claude Code | Alta | ✅ Ativo | Baixa |
+| Telegram | Média | ✅ Ativo | Baixa |
 | WhatsApp | Alta | Pendente | Média |
-| Telegram | Média | Pendente | Baixa |
 | LinkedIn | Média | Pendente | Alta |
 | Instagram | Baixa | Pendente | Alta |
 | Facebook | Baixa | Pendente | Alta |
@@ -16,32 +16,39 @@ Este documento detalha as integrações planejadas para o Assistente Pessoal 24h
 
 ---
 
-## 1. Claude Code
+## 1. Claude Code ✅
+
+**Status**: Ativo e funcionando
 
 **Objetivo**: Integrar o assistente OpenClaw com Claude Code para desenvolvimento de software.
 
-### Configuração
+### Configuração Atual
 
-O Claude Code já está instalado no servidor:
-```bash
-@anthropic-ai/claude-code@2.1.29
+O OpenClaw está configurado com API key da Anthropic usando o modelo `claude-opus-4-5`.
+
+```json
+{
+  "auth": {
+    "profiles": {
+      "anthropic:manual": {
+        "provider": "anthropic",
+        "mode": "token"
+      }
+    }
+  }
+}
 ```
 
-### Uso com OpenClaw
+### Modelo Ativo
+- **Provider**: Anthropic
+- **Modelo**: claude-opus-4-5
+- **Modo**: API Token
 
-```bash
-# No servidor, executar Claude Code
-claude
-
-# Ou via skill do OpenClaw
-openclaw skill add claude-code
-```
-
-### Casos de Uso
-- Desenvolvimento assistido por IA
-- Revisão de código
-- Debugging automatizado
-- Geração de documentação
+### Casos de Uso Ativos
+- ✅ Assistente pessoal via chat web
+- ✅ Integração com Telegram
+- ✅ Processamento de linguagem natural
+- ✅ Respostas contextuais personalizadas (Eddie)
 
 ---
 
@@ -91,7 +98,48 @@ openclaw skill add claude-code
 
 ---
 
-## 3. LinkedIn
+## 3. Telegram ✅
+
+**Status**: Ativo e funcionando
+
+**Objetivo**: Interagir com o assistente Eddie via Telegram de qualquer lugar.
+
+### Configuração Atual
+
+O bot do Telegram está configurado e pareado com o OpenClaw.
+
+```json
+{
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "botToken": "***",
+      "dmPolicy": "pairing"
+    }
+  }
+}
+```
+
+### Como Usar
+
+1. Abra o Telegram e encontre o bot pelo username configurado
+2. Envie `/start` ou qualquer mensagem
+3. O Eddie responderá diretamente
+
+### Funcionalidades Disponíveis
+- ✅ Mensagens diretas com o assistente
+- ✅ Processamento de texto em português
+- ✅ Respostas contextuais (Eddie mantém personalidade)
+- ✅ Comandos nativos do OpenClaw
+
+### Comandos Úteis
+- `/new` - Iniciar nova sessão
+- `/reset` - Resetar contexto
+- Qualquer mensagem é processada pelo Eddie
+
+---
+
+## 5. LinkedIn
 
 **Objetivo**: Automatizar postagens, interações e networking profissional.
 
@@ -128,7 +176,7 @@ openclaw skill add claude-code
 
 ---
 
-## 4. Instagram
+## 6. Instagram
 
 **Objetivo**: Gerenciar publicações e interações no Instagram.
 
@@ -150,7 +198,7 @@ openclaw skill add claude-code
 
 ---
 
-## 5. Facebook
+## 7. Facebook
 
 **Objetivo**: Gerenciar página do Facebook com posts automatizados.
 
@@ -166,7 +214,7 @@ openclaw skill add claude-code
 
 ---
 
-## 6. Agente de Investimentos
+## 8. Agente de Investimentos
 
 **AVISO IMPORTANTE**: Esta é uma funcionalidade de alto risco. Operações financeiras automatizadas podem resultar em perdas significativas.
 
@@ -232,8 +280,9 @@ openclaw skill add claude-code
 
 ## Próximos Passos
 
-1. Configurar OpenClaw básico
-2. Implementar integração WhatsApp
-3. Configurar LinkedIn API
-4. Desenvolver agente de investimentos (paper trading)
-5. Testes extensivos antes de produção
+1. ~~Configurar OpenClaw básico~~ ✅ Concluído
+2. ~~Integrar Telegram~~ ✅ Concluído
+3. Implementar integração WhatsApp
+4. Configurar LinkedIn API
+5. Desenvolver agente de investimentos (paper trading)
+6. Testes extensivos antes de produção
